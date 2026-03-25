@@ -1,0 +1,121 @@
+{
+  "lab": {
+    "ja_name": "Accessibility and Mobility Lab",
+    "en_name": "Accessibility and Mobility Lab",
+    "ja_affiliation": "慶應義塾大学 理工学部",
+    "en_affiliation": "Faculty of Science and Technology, Keio University",
+    "ja_tagline": "視覚障害者の移動アクセシビリティを高める、人とロボットの協調研究",
+    "en_tagline": "Research on human-robot mobility systems that improve accessibility for blind and low-vision people",
+    "ja_overview": "Accessibility and Mobility Labは、視覚障害者の安全で主体的な移動を支えるための知能ロボット、空間理解、インタラクション技術を研究するラボです。AIスーツケースの社会実装を見据え、単なる自動化ではなく、利用者の意思と周囲の社会環境を尊重しながら移動を支援するソーシャルナビゲーションを探究します。",
+    "en_overview": "The Accessibility and Mobility Lab studies intelligent mobility systems, spatial understanding, and interaction techniques that support safe and self-directed travel for blind and low-vision people. With a focus on real-world deployment of the AI Suitcase, the lab explores social navigation that respects user agency as well as the surrounding human environment.",
+    "ja_mission_title": "研究ミッション",
+    "en_mission_title": "Mission",
+    "ja_mission_body": "私たちは、視覚障害者の移動を「誘導される体験」ではなく「自分で選びながら移動できる体験」へと拡張することを目指します。ロボティクス、機械学習、ヒューマンコンピュータインタラクションを横断し、実世界で使えるアクセシブルな移動支援技術を構築します。",
+    "en_mission_body": "We aim to transform mobility for blind people from a passive guided experience into an experience in which users can actively choose how they move. The lab combines robotics, machine learning, and human-computer interaction to build accessible mobility technologies that work in the real world.",
+    "map_url": "https://maps.app.goo.gl/VYUvun4Bfd9GRzmc7",
+    "map_embed_url": "https://www.google.com/maps?q=35.5553149,139.6546213&z=17&output=embed"
+  },
+  "research_areas": [
+    {
+      "id": "shared-control",
+      "ja_title": "シェアードコントロール",
+      "en_title": "Shared Control",
+      "ja_body": "ロボットと視覚障害者が移動の主導権を分担し、状況に応じて介入の度合いを調整する研究です。利用者の意図や不安、周囲の歩行者との関係を考慮しながら、安心感と主体性の両立を目指します。",
+      "en_body": "We study how a robot and a blind traveler can share control authority during navigation, adjusting the level of intervention to fit the situation. This work seeks a balance between confidence, safety, and user agency while taking surrounding pedestrians and social context into account."
+    },
+    {
+      "id": "e2e-navigation",
+      "ja_title": "E2Eモデルナビゲーション",
+      "en_title": "End-to-End Navigation Models",
+      "ja_body": "センサ入力から移動制御までを学習ベースで結び、複雑な屋内外環境でも柔軟に行動できる移動ロボットを実現します。実運用を意識し、頑健性、説明可能性、介入しやすさを重視します。",
+      "en_body": "We develop learning-based navigation models that connect sensor inputs to mobility control, enabling robots to act flexibly in complex indoor and outdoor environments. The work emphasizes robustness, interpretability, and practical human intervention in real deployments."
+    },
+    {
+      "id": "active-mapping",
+      "ja_title": "アクティブマッピング",
+      "en_title": "Active Mapping",
+      "ja_body": "未知の環境でロボットを運用するために、効率よく安全に空間地図を獲得・更新する手法を研究します。継続的な運用を見据え、環境変化への追従や利用者向け情報提示も含めて扱います。",
+      "en_body": "We investigate methods for acquiring and updating spatial maps efficiently and safely so that robots can be deployed in new environments. This includes adaptation to environmental change and presenting map-derived information in accessible ways for users."
+    }
+  ],
+  "members": [
+    {
+      "ja_name": "浅川 智恵子",
+      "en_name": "Chieko Asakawa",
+      "role_ja": "筆頭PI",
+      "role_en": "Lead PI",
+      "bio_ja": "アクセシビリティ研究を牽引し、AIスーツケースの社会実装に向けた研究全体を統括します。",
+      "bio_en": "Leads the lab's accessibility research agenda and oversees the effort toward real-world deployment of the AI Suitcase.",
+      "scholar_url": "https://scholar.google.com/citations?user=IheNxE4AAAAJ&hl=en"
+    },
+    {
+      "ja_name": "高木 啓伸",
+      "en_name": "Hironobu Takagi",
+      "role_ja": "研究メンバー",
+      "role_en": "Research Member",
+      "bio_ja": "視覚障害者支援技術とナビゲーションロボットの実装・評価を中心に研究を進めています。",
+      "bio_en": "Works on assistive technologies for blind people, with a focus on implementing and evaluating navigation robots.",
+      "scholar_url": "https://scholar.google.com/citations?user=NAAdydEAAAAJ&hl=en"
+    },
+    {
+      "ja_name": "石原 辰也",
+      "en_name": "Tatsuya Ishihara",
+      "role_ja": "研究メンバー",
+      "role_en": "Research Member",
+      "bio_ja": "ロボット知能や視覚認識を通じて、人とロボットの協調移動を支える基盤技術を扱います。",
+      "bio_en": "Studies robot intelligence and perception technologies that support collaborative mobility between people and robots.",
+      "scholar_url": "https://scholar.google.com/citations?user=GOQovh4AAAAJ&hl=en"
+    },
+    {
+      "ja_name": "佐藤 大介",
+      "en_name": "Daisuke Sato",
+      "role_ja": "研究メンバー",
+      "role_en": "Research Member",
+      "bio_ja": "モバイルセンシング、位置推定、実環境でのナビゲーション支援システムの構築に取り組んでいます。",
+      "bio_en": "Works on mobile sensing, localization, and practical navigation support systems for real-world environments.",
+      "scholar_url": "https://scholar.google.com/citations?user=dsNpUR0AAAAJ&hl=en"
+    },
+    {
+      "ja_name": "村田 将之",
+      "en_name": "Masayuki Murata",
+      "role_ja": "研究メンバー",
+      "role_en": "Research Member",
+      "bio_ja": "実証実験やフィールド運用を通じて、移動支援ロボットの社会実装に向けた課題を検討します。",
+      "bio_en": "Explores challenges in societal deployment of mobility support robots through field trials and practical operation.",
+      "scholar_url": "https://scholar.google.com/citations?user=XZWOEtgAAAAJ&hl=en"
+    },
+    {
+      "ja_name": "粥川 青汰",
+      "en_name": "Seita Kayukawa",
+      "role_ja": "研究メンバー",
+      "role_en": "Research Member",
+      "bio_ja": "ユーザー体験とインタラクション設計の観点から、移動支援システムの使いやすさを探究します。",
+      "bio_en": "Investigates usability and interaction design for mobility support systems from the perspective of user experience.",
+      "scholar_url": "https://scholar.google.com/citations?user=SpfOQHAAAAAJ&hl=en"
+    }
+  ],
+  "related_links": [
+    {
+      "ja_label": "一般社団法人 次世代移動支援技術開発コンソーシアム (CAAMP)",
+      "en_label": "Consortium for Advanced Assistive Mobility Platform (CAAMP)",
+      "url": "https://caamp.jp/"
+    },
+    {
+      "ja_label": "未来館アクセシビリティラボ",
+      "en_label": "Miraikan Accessibility Lab",
+      "url": "https://www.miraikan.jst.go.jp/lab/AccessibilityLab/"
+    },
+    {
+      "ja_label": "CMU Cognitive Assistance Lab",
+      "en_label": "CMU Cognitive Assistance Lab",
+      "url": "https://www.cs.cmu.edu/~NavCog/"
+    }
+  ],
+  "contact": {
+    "ja_text": "共同研究や見学に関するご相談は、",
+    "en_text": "For collaboration or visit inquiries, please contact us ",
+    "link_label_ja": "こちら",
+    "link_label_en": "here",
+    "link_url": "mailto:tbd@tbd.com"
+  }
+}

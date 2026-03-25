@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder</title>
+  <desc id="desc">Decorative placeholder for a future member portrait.</desc>
+  <rect width="320" height="240" fill="#fffdf8"/>
+  <rect x="18" y="18" width="284" height="204" rx="18" fill="#e8eee9" stroke="#8a7f70" stroke-width="2.5" stroke-dasharray="8 8"/>
+  <circle cx="160" cy="100" r="38" fill="#d8d0c2"/>
+  <path d="M95 185 C110 150, 210 150, 225 185" fill="#d8d0c2"/>
+  <text x="160" y="214" text-anchor="middle" font-size="18" font-family="sans-serif" fill="#5d5851">Member photo</text>
+</svg>

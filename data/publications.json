@@ -1,0 +1,448 @@
+{
+  "generated_at": "2026-03-25T17:40:27.405141+00:00",
+  "source": "Google Scholar",
+  "year_from": 2019,
+  "items": [
+    {
+      "title": "How Does Delegation in Social Interaction Evolve Over Time? Navigation with a Robot for Blind People",
+      "authors": "R Hata, M Kuribayashi, A Wang, H Takagi, C Asakawa",
+      "venue": "arXiv preprint arXiv:2601.19851, 2026",
+      "year": 2026,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&cstart=100&pagesize=100&citation_for_view=NAAdydEAAAAJ:2v_ZtQDX9iAC"
+    },
+    {
+      "title": "MotionBuddy: Exploring Tactile-Based Motion Learning with a Tabletop Humanoid Robot for Blind People",
+      "authors": "K Tanaka, X Wang, H Takagi, Y Ochiai, C Asakawa",
+      "venue": "Proceedings of the 21st ACM/IEEE International Conference on Human-Robot …, 2026",
+      "year": 2026,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&cstart=100&pagesize=100&citation_for_view=NAAdydEAAAAJ:27LrP4qxOz0C"
+    },
+    {
+      "title": "Robot-Assisted Group Tours for Blind People",
+      "authors": "Y Hu, M Kuribayashi, A Wang, S Kayukawa, D Sato, B Mutlu, H Takagi, ...",
+      "venue": "arXiv preprint arXiv:2602.04458, 2026",
+      "year": 2026,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:7PzlFSSx8tAC"
+    },
+    {
+      "title": "Touching Movement: 3D Tactile Poses for Supporting Blind People in Learning Body Movements",
+      "authors": "K Tanaka, X Wang, H Takagi, Y Ochiai, C Asakawa",
+      "venue": "Proceedings of the Twentieth International Conference on Tangible, Embedded …, 2026",
+      "year": 2026,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&cstart=100&pagesize=100&citation_for_view=NAAdydEAAAAJ:-DxkuPiZhfEC"
+    },
+    {
+      "title": "自律型ナビゲーションロボット AI スーツケースの社会実装に向けて",
+      "authors": "高木啓伸， 佐藤大介， 浅川智恵子",
+      "venue": "電子情報通信学会誌= The journal of the Institute of Electronics, Information …, 2026",
+      "year": 2026,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:7BrZ7Jt4UNcC"
+    },
+    {
+      "title": "A Method to Estimate User Position and Orientation Based on Relative Position Measurement Between a Navigation Robot and a Smartphone",
+      "authors": "S Ogiso, D Sato, R Ichikari, T Miura, M Kourogi, T Okuma, T Kurata, ...",
+      "venue": "2025 IEEE/ION Position, Location and Navigation Symposium (PLANS), 1586-1593, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:nRpfm8aw39MC"
+    },
+    {
+      "title": "Beyond omakase: Designing shared control for navigation robots with blind people",
+      "authors": "R Kamikubo, S Kayukawa, Y Kaniwa, A Wang, H Kacorri, H Takagi, ...",
+      "venue": "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems …, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:4DMP91E08xMC"
+    },
+    {
+      "title": "Engaging Visually Impaired People in Science Museums Through an Immersive Workshop: Practices, Challenges, and Opportunities",
+      "authors": "X Wang, S Kayukawa, H Takagi, C Asakawa",
+      "venue": "Proceedings of the 27th International ACM SIGACCESS Conference on Computers …, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:QIV2ME_5wuYC"
+    },
+    {
+      "title": "Field trials of autonomous navigation robot for visually impaired people",
+      "authors": "H Takagi, K Naito, D Sato, M Murata, S Kayukawa, C Asakawa",
+      "venue": "Proceedings of the Extended Abstracts of the CHI Conference on Human Factors …, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:Wp0gIr-vW9MC"
+    },
+    {
+      "title": "Investigating “Touch and Talk” for Blind and Low Vision People: Science Communication Assistance Through Exploring Multiple Tactile Objects",
+      "authors": "A Tsutsui, X Wang, H Takagi, C Asakawa",
+      "venue": "Proceedings of the 27th International ACM SIGACCESS Conference on Computers …, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&cstart=100&pagesize=100&citation_for_view=NAAdydEAAAAJ:sA9dB-pw3HoC"
+    },
+    {
+      "title": "Memory-Maze: Scenario Driven Visual Language Navigation Benchmark for Guiding Blind People",
+      "authors": "M Kuribayashi, K Uehara, A Wang, D Sato, RA Ribeiro, S Chu, ...",
+      "venue": "IEEE Robotics and Automation Letters, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:kVjdVfd2voEC"
+    },
+    {
+      "title": "More than One Step at a Time: Designing Procedural Feedback for Non-visual Makeup Routines",
+      "authors": "F Mingzhe Li, A Oharazawa, C Qingyu Zhu, M Fan, D Sato, C Asakawa, ...",
+      "venue": "arXiv e-prints, arXiv: 2507.03942, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&cstart=100&pagesize=100&citation_for_view=IheNxE4AAAAJ:5qfkUJPXOUwC"
+    },
+    {
+      "title": "Wanderguide: Indoor map-less robotic guide for exploration by blind people",
+      "authors": "M Kuribayashi, K Uehara, A Wang, S Morishima, C Asakawa",
+      "venue": "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems …, 2025",
+      "year": 2025,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&pagesize=100&citation_for_view=IheNxE4AAAAJ:ruyezt5ZtCIC"
+    },
+    {
+      "title": "A Journey in Accessibility: Digital-World to Real-World",
+      "authors": "C Asakawa",
+      "venue": "Proceedings of the 26th International ACM SIGACCESS Conference on Computers …, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&cstart=100&pagesize=100&citation_for_view=IheNxE4AAAAJ:b1wdh0AR-JQC"
+    },
+    {
+      "title": "Chitchatguide: Conversational interaction using large language models for assisting people with visual impairments to explore a shopping mall",
+      "authors": "Y Kaniwa, M Kuribayashi, S Kayukawa, D Sato, H Takagi, C Asakawa, ...",
+      "venue": "Proceedings of the ACM on Human-Computer Interaction 8 (MHCI), 1-25, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:4TOpqqG69KYC"
+    },
+    {
+      "title": "ChitChatGuide: How Can A Guidance System with Large Language Models Impact Shopping Mall Experiences for People with Visual Impairments?",
+      "authors": "Y Kaniwa, M Kuribayashi, S Kayukawa, D Sato, H Takagi, C Asakawa, ...",
+      "venue": "International Conference on Human-Computer Interaction with Mobile Devices …, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:_kc_bZDykSQC"
+    },
+    {
+      "title": "Direct or immersive? Comparing smartphone-based museum guide systems for blind visitors",
+      "authors": "X Wang, S Kayukawa, H Takagi, G Masoero, C Asakawa",
+      "venue": "Proceedings of the 21st International Web for All Conference, 10-22, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:YOwf2qJgpHMC"
+    },
+    {
+      "title": "Memory-maze: Scenario driven benchmark and visual language navigation model for guiding blind people",
+      "authors": "M Kuribayashi, K Uehara, A Wang, D Sato, RA Ribeiro, S Chu, ...",
+      "venue": "ICRA 2025 Workshop: Human-Centered Robot Learning in the Era of Big Data and …, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:LO7wyVUgiFcC"
+    },
+    {
+      "title": "Snap&Nav: Smartphone-based indoor navigation system for blind people via floor map analysis and intersection detection",
+      "authors": "M Kubota, M Kuribayashi, S Kayukawa, H Takagi, C Asakawa, ...",
+      "venue": "Proceedings of the ACM on Human-Computer Interaction 8 (MHCI), 1-22, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:M3ejUd6NZC8C"
+    },
+    {
+      "title": "TBD pedestrian data collection: Towards rich, portable, and large-scale natural pedestrian data",
+      "authors": "A Wang, D Sato, Y Corzo, S Simkin, A Biswas, A Steinfeld",
+      "venue": "2024 IEEE International Conference on Robotics and Automation (ICRA), 637-644, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:8d8msizDQcsC"
+    },
+    {
+      "title": "\" We are at the mercy of others' opinion\": Supporting Blind People in Recreational Window Shopping with AI-infused Technology",
+      "authors": "R Kamikubo, H Kacorri, C Asakawa",
+      "venue": "Proceedings of the 21st International Web for All Conference, 45-58, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&cstart=100&pagesize=100&citation_for_view=IheNxE4AAAAJ:g3aElNc5_aQC"
+    },
+    {
+      "title": "視覚障害者用ナビゲーション・ロボット 「AI スーツケース」 の実用化に向けて",
+      "authors": "高木啓伸， 村田将之， 佐藤大介",
+      "venue": "ロボット/日本ロボット工業会 編, 20-25, 2024",
+      "year": 2024,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XZWOEtgAAAAJ&pagesize=100&citation_for_view=XZWOEtgAAAAJ:-f6ydRqryjwC"
+    },
+    {
+      "title": "3DMovieMap: An interactive route viewer for multi-level buildings",
+      "authors": "S Kayukawa, K Higuchi, S Morishima, K Sakurada",
+      "venue": "Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing …, 2023",
+      "year": 2023,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:kNdYIx-mwKoC"
+    },
+    {
+      "title": "asEars: Designing and evaluating the user experience of wearable assistive devices for single-sided deafness",
+      "authors": "K Takaki, E Nozaki, T Kanai, A Hautasaari, A Kashio, D Sato, ...",
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems …, 2023",
+      "year": 2023,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:hCrLmN-GePgC"
+    },
+    {
+      "title": "Enhancing blind visitor’s autonomy in a science museum using an autonomous navigation robot",
+      "authors": "S Kayukawa, D Sato, M Murata, T Ishihara, H Takagi, S Morishima, ...",
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems …, 2023",
+      "year": 2023,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:MXK_kJrjxJIC"
+    },
+    {
+      "title": "Interaction techniques with a navigation robot for the visually impaired",
+      "authors": "C Asakawa",
+      "venue": "Proceedings of the 2023 ACM/IEEE International Conference on Human-Robot …, 2023",
+      "year": 2023,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&cstart=100&pagesize=100&citation_for_view=IheNxE4AAAAJ:4MWp96NkSFoC"
+    },
+    {
+      "title": "Pathfinder: Designing a map-less navigation system for blind people in unfamiliar buildings",
+      "authors": "M Kuribayashi, T Ishihara, D Sato, J Vongkulbhisal, K Ram, S Kayukawa, ...",
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems …, 2023",
+      "year": 2023,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:3fE2CSJIrl8C"
+    },
+    {
+      "title": "Touchpilot: designing a guidance system that assists blind people in learning complex 3d structures",
+      "authors": "X Wang, S Kayukawa, H Takagi, C Asakawa",
+      "venue": "Proceedings of the 25th International ACM SIGACCESS Conference on Computers …, 2023",
+      "year": 2023,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:Zph67rFs4hoC"
+    },
+    {
+      "title": "BentoMuseum: 3D and layered interactive museum map for blind visitors",
+      "authors": "X Wang, S Kayukawa, H Takagi, C Asakawa",
+      "venue": "Proceedings of the 24th international ACM SIGACCESS conference on computers …, 2022",
+      "year": 2022,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:0EnyYjriUFMC"
+    },
+    {
+      "title": "Corridor-Walker: Mobile indoor walking assistance for blind people to avoid obstacles and recognize intersections",
+      "authors": "M Kuribayashi, S Kayukawa, J Vongkulbhisal, C Asakawa, D Sato, ...",
+      "venue": "Proceedings of the ACM on Human-Computer Interaction 6 (MHCI), 1-22, 2022",
+      "year": 2022,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:5nxA0vEk-isC"
+    },
+    {
+      "title": "How Users, Facility Managers, and Bystanders Perceive and Accept a Navigation Robot for Visually Impaired People in Public Buildings",
+      "authors": "S Kayukawa, D Sato, M Murata, T Ishihara, A Kosugi, H Takagi, ...",
+      "venue": "",
+      "year": 2022,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:hqOjcs7Dif8C"
+    },
+    {
+      "title": "New Challenges for the Accessibility of Research in a Transforming Society",
+      "authors": "C Asakawa",
+      "venue": "2022 Annual Meeting, 2022",
+      "year": 2022,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&cstart=100&pagesize=100&citation_for_view=IheNxE4AAAAJ:0KyAp5RtaNEC"
+    },
+    {
+      "title": "One-Shot Wayfinding Method for Blind People via OCR and Arrow Analysis",
+      "authors": "Y Yamanaka¹, S Kayukawa, H Takagi, Y Nagaoka¹",
+      "venue": "Mobile and Ubiquitous Systems: Computing, Networking and Services: 18th EAI …, 2022",
+      "year": 2022,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:mVmsd5A6BfQC"
+    },
+    {
+      "title": "アクセシビリティのプラクティス―「誰一人取り残さない」 ための情報技術: 招待論文: 2. 自律型視覚障がい者ナビゲーションロボットの普及を目指して",
+      "authors": "高木啓伸， 村田将之， 佐藤大介， 田中俊也， 籔内智浩， 粥川青汰， ...",
+      "venue": "情報処理 63 (11), d12-d29, 2022",
+      "year": 2022,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:zCSUwVk65WsC"
+    },
+    {
+      "title": "自律型視覚障がい者ナビゲーションロボットの普及を目指して",
+      "authors": "高木啓伸， 村田将之， 佐藤大介， 田中俊也， 籔内智浩， 粥川青汰， ...",
+      "venue": "情報処理 63 (11), d12-d29, 2022",
+      "year": 2022,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XZWOEtgAAAAJ&pagesize=100&citation_for_view=XZWOEtgAAAAJ:aqlVkmm33-oC"
+    },
+    {
+      "title": "Accessing passersby proxemic signals through a head-worn camera: opportunities and limitations for the blind",
+      "authors": "K Lee, D Sato, S Asakawa, C Asakawa, H Kacorri",
+      "venue": "Proceedings of the 23rd International ACM SIGACCESS Conference on Computers …, 2021",
+      "year": 2021,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:VaXvl8Fpj5cC"
+    },
+    {
+      "title": "Designing a Smartphone-Based Assistance System for Blind People to Recognize Intersections and Obstacles in Indoor Corridors",
+      "authors": "M Kuribayashi, S Kayukawa, D Sato, C Asakawa, H Takagi, S Morishima",
+      "venue": "Proceedings of the 18th EAI International Conference on Mobile and …, 2021",
+      "year": 2021,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:M7yex6snE4oC"
+    },
+    {
+      "title": "Linechaser: a smartphone-based navigation system for blind people to stand in lines",
+      "authors": "M Kuribayashi, S Kayukawa, H Takagi, C Asakawa, S Morishima",
+      "venue": "Proceedings of the 2021 CHI conference on human factors in computing systems …, 2021",
+      "year": 2021,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:eQOLeE2rZwMC"
+    },
+    {
+      "title": "LineChaser: A Smartphone-Based Navigation System to Help Blind People to Stand in Lines",
+      "authors": "M Kuribayashi, S Kayukawa, H Takagi, C Asakawa, S Morishima",
+      "venue": "ACM CHI Conference on Human Factors in Computing Systems, 2021",
+      "year": 2021,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&cstart=100&pagesize=100&citation_for_view=NAAdydEAAAAJ:U_HPUtbDl20C"
+    },
+    {
+      "title": "New smartphone app to navigate blind people to stand in lines with distances",
+      "authors": "H Takagi, C Asakawa, M Kuribayashi, S Kayukawa, AI Human-Centered",
+      "venue": "Accessed: Jan 27, 2025, 2021",
+      "year": 2021,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:9ZlFYXVOiuMC"
+    },
+    {
+      "title": "One-Shot Wayfinding Method for Blind People via OCR and Arrow Analysis with a 360-degree Smartphone Camera",
+      "authors": "Y Yamanaka, S Kayukawa, H Takagi, Y Nagaoka, Y Hiratsuka, S Kurihara",
+      "venue": "Proceedings of the 18th EAI International Conference on Mobile and …, 2021",
+      "year": 2021,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:LkGwnXOMwfcC"
+    },
+    {
+      "title": "Using speech data from interactions with a voice assistant to predict the risk of future accidents for older drivers: prospective cohort study",
+      "authors": "Y Yamada, K Shinkawa, M Kobayashi, H Takagi, M Nemoto, K Nemoto, ...",
+      "venue": "Journal of medical internet research 23 (4), e27667, 2021",
+      "year": 2021,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&pagesize=100&citation_for_view=NAAdydEAAAAJ:WC9gN4BGCRcC"
+    },
+    {
+      "title": "BlindPilot: A robotic local navigation system that leads blind people to a landmark object",
+      "authors": "S Kayukawa, T Ishihara, H Takagi, S Morishima, C Asakawa",
+      "venue": "Extended abstracts of the 2020 CHI conference on human factors in computing …, 2020",
+      "year": 2020,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:zYLM7Y9cAGgC"
+    },
+    {
+      "title": "Guiding blind pedestrians in public spaces by understanding walking behavior of nearby pedestrians",
+      "authors": "S Kayukawa, T Ishihara, H Takagi, S Morishima, C Asakawa",
+      "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous …, 2020",
+      "year": 2020,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:Y0pCki6q_DkC"
+    },
+    {
+      "title": "Pedestrian detection with wearable cameras for the blind: A two-way perspective",
+      "authors": "K Lee, D Sato, S Asakawa, H Kacorri, C Asakawa",
+      "venue": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems …, 2020",
+      "year": 2020,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:9Nmd_mFXekcC"
+    },
+    {
+      "title": "Predicting future accident risks of older drivers by speech data from a voice-based dialogue system: a preliminary result",
+      "authors": "Y Yamada, K Shinkawa, A Kosugi, M Kobayashi, H Takagi, M Nemoto, ...",
+      "venue": "International Conference on Applied Human Factors and Ergonomics, 131-137, 2020",
+      "year": 2020,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&cstart=100&pagesize=100&citation_for_view=NAAdydEAAAAJ:owLR8QvbtFgC"
+    },
+    {
+      "title": "Recog: Supporting blind people in recognizing personal objects",
+      "authors": "D Ahmetovic, D Sato, U Oh, T Ishihara, K Kitani, C Asakawa",
+      "venue": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems …, 2020",
+      "year": 2020,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:XD-gHx7UXLsC"
+    },
+    {
+      "title": "Smartphone-based assistance for blind people to stand in lines",
+      "authors": "S Kayukawa, H Takagi, J Guerreiro, S Morishima, C Asakawa",
+      "venue": "Extended Abstracts of the 2020 CHI Conference on Human Factors in Computing …, 2020",
+      "year": 2020,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "title": "Virtual navigation for blind people: Transferring route knowledge to the real-World",
+      "authors": "J Guerreiro, D Sato, D Ahmetovic, E Ohn-Bar, KM Kitani, C Asakawa",
+      "venue": "International Journal of Human-Computer Studies 135, 102369, 2020",
+      "year": 2020,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:uJ-U7cs_P_0C"
+    },
+    {
+      "title": "A-EXP4: Online social policy learning for adaptive robot-pedestrian interaction",
+      "authors": "P Jin, E Ohn-Bar, K Kitani, C Asakawa",
+      "venue": "2019 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&cstart=100&pagesize=100&citation_for_view=IheNxE4AAAAJ:eq2jaN3J8jMC"
+    },
+    {
+      "title": "Airport accessibility and navigation assistance for people with visual impairments",
+      "authors": "J Guerreiro, D Ahmetovic, D Sato, K Kitani, C Asakawa",
+      "venue": "Proceedings of the 2019 CHI conference on human factors in computing systems …, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:ZfRJV9d4-WMC"
+    },
+    {
+      "title": "An independent and interactive museum experience for blind people",
+      "authors": "S Asakawa, J Guerreiro, D Sato, H Takagi, D Ahmetovic, D Gonzalez, ...",
+      "venue": "Proceedings of the 16th International Web for All Conference, 1-9, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:-_dYPAW6P2MC"
+    },
+    {
+      "title": "A Study on the Sense of Burden and Body Ownership on Virtual Slope",
+      "authors": "R Shimamura, S Kayukawa, T Nakatsuka, S Miyakawa, S Morishima",
+      "venue": "Proceedings of the 2019 IEEE Conference on Virtual Reality and 3D User …, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:UeHWp8X0CEIC"
+    },
+    {
+      "title": "BBeep: A Sonic Collision Avoidance System for Blind Travellers and Nearby Pedestrians",
+      "authors": "S Kayukawa, K Higuchi, J Guerreiro, S Morishima, Y Sato, K Kitani, ...",
+      "venue": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems …, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpfOQHAAAAAJ&pagesize=100&citation_for_view=SpfOQHAAAAAJ:qjMakFHDy7sC"
+    },
+    {
+      "title": "Cabot: Designing and evaluating an autonomous navigation robot for blind people",
+      "authors": "J Guerreiro, D Sato, S Asakawa, H Dong, KM Kitani, C Asakawa",
+      "venue": "Proceedings of the 21st international ACM SIGACCESS conference on computers …, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:35r97b3x0nAC"
+    },
+    {
+      "title": "Deep learning compensation of rotation errors during navigation assistance for people with visual impairments or blindness",
+      "authors": "D Ahmetovic, S Mascetti, C Bernareggi, J Guerreiro, U Oh, C Asakawa",
+      "venue": "ACM Transactions on Accessible Computing (TACCESS) 12 (4), 1-19, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&pagesize=100&citation_for_view=IheNxE4AAAAJ:VL0QpB8kHFEC"
+    },
+    {
+      "title": "Effects of age-related cognitive decline on elderly user interactions with voice-based dialogue systems",
+      "authors": "M Kobayashi, A Kosugi, H Takagi, M Nemoto, K Nemoto, T Arai, ...",
+      "venue": "IFIP Conference on Human-Computer Interaction, 53-74, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&pagesize=100&citation_for_view=NAAdydEAAAAJ:ruyezt5ZtCIC"
+    },
+    {
+      "title": "Hacking blind navigation",
+      "authors": "J Guerreiro, H Kacorri, JP Bigham, E Cutrell, D Sato, D Ahmetovic, ...",
+      "venue": "Extended Abstracts of the 2019 CHI Conference on Human Factors in Computing …, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:tzM49s52ZIMC"
+    },
+    {
+      "title": "Impact of expertise on interaction preferences for navigation assistance of visually impaired individuals",
+      "authors": "D Ahmetovic, J Guerreiro, E Ohn-Bar, KM Kitani, C Asakawa",
+      "venue": "Proceedings of the 16th International Web for All Conference, 1-9, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IheNxE4AAAAJ&pagesize=100&citation_for_view=IheNxE4AAAAJ:AXPGKjj_ei8C"
+    },
+    {
+      "title": "NavCog3 in the wild: Large-scale blind indoor navigation assistant with semantic features",
+      "authors": "D Sato, U Oh, J Guerreiro, D Ahmetovic, K Naito, H Takagi, KM Kitani, ...",
+      "venue": "ACM Transactions on Accessible Computing (TACCESS) 12 (3), 1-30, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:fEOibwPWpKIC"
+    },
+    {
+      "title": "Smartphone-based localization for blind navigation in building-scale indoor environments",
+      "authors": "M Murata, D Ahmetovic, D Sato, H Takagi, KM Kitani, C Asakawa",
+      "venue": "Pervasive and Mobile Computing 57, 14-32, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XZWOEtgAAAAJ&pagesize=100&citation_for_view=XZWOEtgAAAAJ:0EnyYjriUFMC"
+    },
+    {
+      "title": "Transcoding",
+      "authors": "C Asakawa, H Takagi, K Fukuda",
+      "venue": "Web Accessibility: A Foundation for Research, 569-602, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NAAdydEAAAAJ&cstart=100&pagesize=100&citation_for_view=NAAdydEAAAAJ:0EnyYjriUFMC"
+    },
+    {
+      "title": "Wayfinding",
+      "authors": "D Sato, H Takagi, C Asakawa",
+      "venue": "Web Accessibility: A Foundation for Research, 677-700, 2019",
+      "year": 2019,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dsNpUR0AAAAJ&pagesize=100&citation_for_view=dsNpUR0AAAAJ:evX43VCCuoAC"
+    }
+  ]
+}

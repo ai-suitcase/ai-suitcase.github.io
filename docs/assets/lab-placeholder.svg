@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder image</title>
+  <desc id="desc">Decorative placeholder for a future laboratory photo.</desc>
+  <rect width="640" height="480" fill="#fffdf8"/>
+  <rect x="24" y="24" width="592" height="432" rx="24" fill="#efe8d8" stroke="#8a7f70" stroke-width="3" stroke-dasharray="10 10"/>
+  <path d="M120 332 L252 208 L352 292 L432 228 L520 332" fill="none" stroke="#045b62" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="220" cy="150" r="36" fill="#d1e3e4"/>
+  <text x="320" y="390" text-anchor="middle" font-size="28" font-family="sans-serif" fill="#5d5851">Photo placeholder</text>
+</svg>
