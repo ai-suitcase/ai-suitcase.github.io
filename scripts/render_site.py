@@ -26,34 +26,22 @@ def e(value: str) -> str:
     return html.escape(value, quote=True)
 
 
-def nav_items(lang: str) -> list[tuple[str, str]]:
-    labels = {
-        "ja": [
-            ("mission", "ミッション"),
-            ("research", "研究内容"),
-            ("members", "メンバー"),
-            ("publications", "業績"),
-            ("access", "アクセス"),
-            ("links", "関連リンク"),
-        ],
-        "en": [
-            ("mission", "Mission"),
-            ("research", "Research"),
-            ("members", "Members"),
-            ("publications", "Publications"),
-            ("access", "Access"),
-            ("links", "Related Links"),
-        ],
-    }
-    return labels[lang]
+def localized_field(data: dict, lang: str, key: str) -> str:
+    return data[f"{lang}_{key}"]
 
 
-def build_research_cards(site: dict, lang: str) -> str:
+def nav_items(site: dict, lang: str) -> list[tuple[str, str]]:
+    return [(item["id"], item["label"]) for item in site["ui"][lang]["nav"]]
+
+
+def build_research_cards(site: dict, lang: str, ui: dict) -> str:
     chunks = []
-    for area in site["research_areas"]:
+    card_label = ui["research_card_label"]
+    for index, area in enumerate(site["research_areas"], start=1):
         chunks.append(
             f"""
             <article class="card research-card">
+              <p class="card-index">{index:02d} / {e(card_label)}</p>
               <h3>{e(area[f"{lang}_title"])}</h3>
               <p>{e(area[f"{lang}_body"])}</p>
             </article>
@@ -62,23 +50,30 @@ def build_research_cards(site: dict, lang: str) -> str:
     return "\n".join(chunks)
 
 
-def build_member_cards(site: dict, lang: str) -> str:
+def build_member_cards(site: dict, lang: str, asset_prefix: str, ui: dict) -> str:
     chunks = []
     for member in site["members"]:
+        member_name = localized_field(member, lang, "name")
+        photo_alt = ui["member_photo_alt"].format(name=member_name)
         chunks.append(
             f"""
             <article class="card member-card">
-              <h3>{e(member[f"{lang}_name"])}</h3>
-              <p><a href="{e(member['scholar_url'])}">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="{e(asset_prefix)}/member-placeholder.svg" alt="{e(photo_alt)}" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>{e(member_name)}</h3>
+                <p><a class="text-link" href="{e(member['scholar_url'])}">{e(ui["scholar_link_label"])}</a></p>
+              </div>
             </article>
             """.strip()
         )
     return "\n".join(chunks)
 
 
-def build_publication_items(publications: dict) -> str:
+def build_publication_items(publications: dict, ui: dict) -> str:
     if not publications["items"]:
-        return '<li class="publication-item">Publication data has not been fetched yet.</li>'
+        return f'<li class="publication-item">{e(ui["publication_empty"])}</li>'
 
     groups: dict[int, list[dict]] = {}
     for item in publications["items"]:
@@ -112,58 +107,62 @@ def build_publication_items(publications: dict) -> str:
     return "\n".join(chunks)
 
 
-def render_page(site: dict, publications: dict, lang: str) -> str:
+def render_page(
+    site: dict,
+    publications: dict,
+    lang: str,
+    *,
+    asset_prefix: str = "../assets",
+    switch_href: str | None = None,
+    home_href: str = "./index.html",
+) -> str:
     is_ja = lang == "ja"
+    ui = site["ui"][lang]
     page_title = (
-        f"{site['lab']['ja_name']} | {site['lab']['ja_affiliation']}"
+        f"{localized_field(site['lab'], lang, 'name')} | {localized_field(site['lab'], lang, 'affiliation')}"
         if is_ja
-        else f"{site['lab']['en_name']} | {site['lab']['en_affiliation']}"
+        else f"{localized_field(site['lab'], lang, 'name')} | {localized_field(site['lab'], lang, 'affiliation')}"
     )
-    hero_name = site["lab"]["ja_name"] if is_ja else site["lab"]["en_name"]
-    affiliation = site["lab"]["ja_affiliation"] if is_ja else site["lab"]["en_affiliation"]
-    tagline = site["lab"]["ja_tagline"] if is_ja else site["lab"]["en_tagline"]
-    overview = site["lab"]["ja_overview"] if is_ja else site["lab"]["en_overview"]
-    mission_title = site["lab"]["ja_mission_title"] if is_ja else site["lab"]["en_mission_title"]
-    mission_body = site["lab"]["ja_mission_body"] if is_ja else site["lab"]["en_mission_body"]
-    contact_text = site["contact"]["ja_text"] if is_ja else site["contact"]["en_text"]
-    publication_heading = "研究業績" if is_ja else "Publications"
-    access_body = (
-        "慶應義塾大学 理工学部キャンパス 34棟405号室を拠点としています。ページ内に埋め込んだ地図とマップリンクから場所をご確認いただけます。"
-        if is_ja
-        else "The lab is based in Room 405, Building 34, Faculty of Science and Technology, Keio University. You can check the embedded map below or open the full map in Google Maps."
-    )
-    links_heading = "関連リンク" if is_ja else "Related Links"
-    members_heading = "メンバー" if is_ja else "Members"
-    research_heading = "研究内容" if is_ja else "Research Areas"
-    gallery_note = (
-        "写真は後日追加予定です。現在はプレースホルダーを表示しています。"
-        if is_ja
-        else "Photos will be added later. Placeholder images are shown for now."
-    )
-    switch_label = "English" if is_ja else "日本語"
-    switch_href = "../en/index.html" if is_ja else "../ja/index.html"
+    hero_name = localized_field(site["lab"], lang, "name")
+    affiliation = localized_field(site["lab"], lang, "affiliation")
+    tagline = localized_field(site["lab"], lang, "tagline")
+    overview = localized_field(site["lab"], lang, "overview")
+    mission_title = localized_field(site["lab"], lang, "mission_title")
+    mission_body = localized_field(site["lab"], lang, "mission_body")
+    contact_text = localized_field(site["contact"], lang, "text")
+    contact_link_label = site["contact"][f"link_label_{lang}"]
+    publication_heading = ui["publication_heading"]
+    access_body = ui["access_body"]
+    links_heading = ui["links_heading"]
+    members_heading = ui["members_heading"]
+    research_heading = ui["research_heading"]
+    switch_label = ui["switch_label"]
+    if switch_href is None:
+        switch_href = "../en/index.html" if is_ja else "../ja/index.html"
     updated_at = publications.get("generated_at")
-    updated_label = ""
     if updated_at:
         dt = datetime.fromisoformat(updated_at.replace("Z", "+00:00"))
-        updated_label = (
-            f"最終更新: {dt.strftime('%Y-%m-%d %H:%M UTC')}"
-            if is_ja
-            else f"Last updated: {dt.strftime('%Y-%m-%d %H:%M UTC')}"
-        )
+        updated_label = f"{ui['updated_prefix']}{dt.strftime('%Y-%m-%d %H:%M UTC')}"
     else:
-        updated_label = "未取得" if is_ja else "Not fetched yet"
+        updated_label = ui["not_fetched"]
 
     nav_html = "".join(
         f'<li><a href="#{section_id}">{e(label)}</a></li>'
-        for section_id, label in nav_items(lang)
+        for section_id, label in nav_items(site, lang)
     )
     related_html = "".join(
         f'<li><a href="{e(link["url"])}">{e(link[f"{lang}_label"])}</a></li>'
         for link in site["related_links"]
     )
-    map_title = "慶應義塾大学 矢上キャンパスの地図" if is_ja else "Map of Keio University Yagami Campus"
-    contact_link_label = site["contact"]["link_label_ja"] if is_ja else site["contact"]["link_label_en"]
+    map_title = ui["map_title"]
+    hero_primary_href = "#research"
+    hero_primary_label = ui["hero_primary_label"]
+    hero_secondary_href = "#publications"
+    hero_secondary_label = ui["hero_secondary_label"]
+    visual_kicker = localized_field(site["lab"], lang, "prototype_kicker")
+    visual_title = localized_field(site["lab"], lang, "prototype_title")
+    visual_body = localized_field(site["lab"], lang, "prototype_body")
+    hero_image_url = f"{asset_prefix}/hero-photo.jpg"
 
     return f"""<!doctype html>
 <html lang="{lang}">
@@ -172,17 +171,17 @@ def render_page(site: dict, publications: dict, lang: str) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{e(page_title)}</title>
   <meta name="description" content="{e(tagline)}">
-  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="{e(asset_prefix)}/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">{'本文へ移動' if is_ja else 'Skip to content'}</a>
+  <a class="skip-link" href="#main">{e(ui["skip_link"])}</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="./index.html">
+      <a class="brand" href="{e(home_href)}">
         <span class="brand-name">{e(hero_name)}</span>
         <span class="brand-affiliation">{e(affiliation)}</span>
       </a>
-      <nav aria-label="Primary">
+      <nav aria-label="{e(ui['primary_nav_label'])}">
         <ul class="nav-list">
           {nav_html}
         </ul>
@@ -193,15 +192,15 @@ def render_page(site: dict, publications: dict, lang: str) -> str:
   <main id="main">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy panel" style="--hero-image: url('{e(hero_image_url)}');">
           <p class="eyebrow">{e(affiliation)}</p>
           <h1>{e(hero_name)}</h1>
           <p class="hero-tagline">{e(tagline)}</p>
           <p>{e(overview)}</p>
-        </div>
-        <div class="hero-visual">
-          <img src="../assets/lab-placeholder.svg" alt="" width="640" height="480">
-          <p class="image-note">{e(gallery_note)}</p>
+          <div class="hero-actions">
+            <a class="button-link" href="{hero_primary_href}">{e(hero_primary_label)}</a>
+            <a class="button-link button-secondary" href="{hero_secondary_href}">{e(hero_secondary_label)}</a>
+          </div>
         </div>
       </div>
     </section>
@@ -209,29 +208,43 @@ def render_page(site: dict, publications: dict, lang: str) -> str:
     <section id="mission" class="section">
       <div class="wrap section-grid">
         <div>
-          <p class="section-kicker">{'ミッション' if is_ja else 'Mission'}</p>
+          <p class="section-kicker">{e(ui["mission_kicker"])}</p>
           <h2>{e(mission_title)}</h2>
         </div>
         <p class="lead">{e(mission_body)}</p>
       </div>
     </section>
 
+    <!-- 一旦コメントアウト
+    <section class="section">
+      <div class="wrap section-grid">
+        <div>
+          <p class="section-kicker hero-kicker">{e(visual_kicker)}</p>
+          <h2>{e(visual_title)}</h2>
+        </div>
+        <div class="prototype-content">
+          <p class="lead">{e(visual_body)}</p>
+        </div>
+      </div>
+    </section>
+    -->
+
     <section id="research" class="section section-alt">
       <div class="wrap">
-        <p class="section-kicker">{'研究' if is_ja else 'Research'}</p>
+        <p class="section-kicker">{e(ui["research_kicker"])}</p>
         <h2>{e(research_heading)}</h2>
         <div class="card-grid three-up">
-          {build_research_cards(site, lang)}
+          {build_research_cards(site, lang, ui)}
         </div>
       </div>
     </section>
 
     <section id="members" class="section section-alt">
       <div class="wrap">
-        <p class="section-kicker">{'メンバー' if is_ja else 'People'}</p>
+        <p class="section-kicker">{e(ui["members_kicker"])}</p>
         <h2>{e(members_heading)}</h2>
         <div class="card-grid two-up">
-          {build_member_cards(site, lang)}
+          {build_member_cards(site, lang, asset_prefix, ui)}
         </div>
       </div>
     </section>
@@ -240,22 +253,22 @@ def render_page(site: dict, publications: dict, lang: str) -> str:
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Scholar</p>
+            <p class="section-kicker">{e(ui["publication_kicker"])}</p>
             <h2>{e(publication_heading)}</h2>
           </div>
           <p class="section-meta">{e(updated_label)}</p>
         </div>
-        {build_publication_items(publications)}
+        {build_publication_items(publications, ui)}
       </div>
     </section>
 
     <section id="access" class="section section-alt">
       <div class="wrap access-grid">
         <div>
-          <p class="section-kicker">{'アクセス' if is_ja else 'Access'}</p>
-          <h2>{'アクセス' if is_ja else 'Access'}</h2>
+          <p class="section-kicker">{e(ui["access_kicker"])}</p>
+          <h2>{e(ui["access_heading"])}</h2>
           <p>{e(access_body)}</p>
-          <p><a class="button-link" href="{e(site['lab']['map_url'])}">{'Googleマップで見る' if is_ja else 'Open in Google Maps'}</a></p>
+          <p><a class="button-link" href="{e(site['lab']['map_url'])}">{e(ui["map_button_label"])}</a></p>
         </div>
         <div class="map-panel">
           <iframe
@@ -271,14 +284,14 @@ def render_page(site: dict, publications: dict, lang: str) -> str:
     <section id="links" class="section">
       <div class="wrap section-grid">
         <div>
-          <p class="section-kicker">{'関連情報' if is_ja else 'Network'}</p>
+          <p class="section-kicker">{e(ui["links_kicker"])}</p>
           <h2>{e(links_heading)}</h2>
         </div>
         <div>
           <ul class="link-list">
             {related_html}
           </ul>
-          <p class="contact-note">{e(contact_text)}<a href="{e(site['contact']['link_url'])}">{e(contact_link_label)}</a>{'まで。' if is_ja else '.'}</p>
+          <p class="contact-note">{e(contact_text)}<a href="{e(site['contact']['link_url'])}">{e(contact_link_label)}</a>{e(ui["contact_suffix"])}</p>
         </div>
       </div>
     </section>
@@ -286,7 +299,7 @@ def render_page(site: dict, publications: dict, lang: str) -> str:
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <p>{e(hero_name)} / {e(affiliation)}</p>
-      <p><a href="./index.html">{'ページ先頭へ戻る' if is_ja else 'Back to top'}</a></p>
+      <p><a href="{e(home_href)}">{e(ui["back_to_top"])}</a></p>
     </div>
   </footer>
 </body>
@@ -294,46 +307,27 @@ def render_page(site: dict, publications: dict, lang: str) -> str:
 """
 
 
-def render_language_selector(site: dict) -> str:
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{e(site['lab']['en_name'])}</title>
-  <link rel="stylesheet" href="./assets/site.css">
-</head>
-<body class="selector-body">
-  <main class="selector-main">
-    <p class="eyebrow">{e(site['lab']['en_affiliation'])}</p>
-    <h1>{e(site['lab']['en_name'])}</h1>
-    <p>{e(site['lab']['en_tagline'])}</p>
-    <div class="selector-links">
-      <a class="button-link" href="./ja/index.html">日本語</a>
-      <a class="button-link button-secondary" href="./en/index.html">English</a>
-    </div>
-  </main>
-</body>
-</html>
-"""
-
-
-def write_assets() -> None:
+def write_assets(site: dict) -> None:
     ensure_dir(ASSETS_DIR)
+    asset_ui = site["ui"]["assets"]
     css = """\
 :root {
-  --bg: #f6f2ea;
-  --panel: #fffdf8;
-  --panel-alt: #eae5d9;
-  --text: #1c1a18;
-  --muted: #5d5851;
-  --line: #c9c0b2;
-  --accent: #045b62;
-  --accent-strong: #023b40;
-  --focus: #d66a00;
-  --shadow: 0 18px 40px rgba(28, 26, 24, 0.08);
-  --radius: 20px;
-  --wrap: min(1120px, calc(100vw - 2rem));
+  --bg: #f5efe3;
+  --bg-strong: #efe2cb;
+  --panel: rgba(255, 250, 241, 0.8);
+  --panel-solid: #fff8ee;
+  --panel-strong: rgba(255, 244, 224, 0.95);
+  --text: #172126;
+  --muted: #5f6368;
+  --line: rgba(23, 33, 38, 0.12);
+  --accent: #ef5b2a;
+  --accent-strong: #b53a12;
+  --accent-alt: #0f766e;
+  --accent-soft: #ffd166;
+  --focus: #1d4ed8;
+  --shadow: 0 28px 60px rgba(23, 33, 38, 0.12);
+  --radius: 28px;
+  --wrap: min(1160px, calc(100vw - 2rem));
 }
 
 *,
@@ -343,13 +337,30 @@ def write_assets() -> None:
 html { scroll-behavior: smooth; }
 
 body {
+  position: relative;
   margin: 0;
+  min-height: 100vh;
   color: var(--text);
   background:
-    radial-gradient(circle at top right, rgba(4, 91, 98, 0.14), transparent 26%),
-    linear-gradient(180deg, #f9f7f2 0%, var(--bg) 100%);
-  font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    radial-gradient(circle at 12% 12%, rgba(239, 91, 42, 0.26), transparent 22%),
+    radial-gradient(circle at 86% 16%, rgba(15, 118, 110, 0.18), transparent 24%),
+    radial-gradient(circle at 78% 78%, rgba(255, 209, 102, 0.28), transparent 24%),
+    linear-gradient(180deg, #fbf6ed 0%, var(--bg) 46%, var(--bg-strong) 100%);
+  font-family: "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
   line-height: 1.7;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(23, 33, 38, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 33, 38, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.58), transparent 82%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -374,9 +385,9 @@ a:hover { color: var(--accent); }
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(12px);
-  background: rgba(249, 247, 242, 0.92);
-  border-bottom: 1px solid rgba(201, 192, 178, 0.7);
+  backdrop-filter: blur(18px);
+  background: rgba(251, 246, 237, 0.78);
+  border-bottom: 1px solid rgba(23, 33, 38, 0.08);
 }
 
 .header-inner,
@@ -388,6 +399,8 @@ a:hover { color: var(--accent); }
   padding: 1rem 0;
 }
 
+.header-inner { gap: 0.8rem; }
+
 .brand {
   display: inline-flex;
   flex-direction: column;
@@ -395,13 +408,18 @@ a:hover { color: var(--accent); }
   color: inherit;
 }
 
-.brand-name { font-weight: 800; font-size: 1.05rem; }
+.brand-name {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
 .brand-affiliation { color: var(--muted); font-size: 0.92rem; }
 
 .nav-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -415,13 +433,28 @@ a:hover { color: var(--accent); }
   justify-content: center;
   min-height: 44px;
   border-radius: 999px;
-  padding: 0.7rem 1rem;
+  padding: 0.72rem 1.05rem;
   text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.nav-list a {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(23, 33, 38, 0.08);
+  padding: 0.62rem 0.85rem;
+  font-size: 0.94rem;
+  white-space: nowrap;
 }
 
 .nav-list a:hover,
 .lang-switch:hover,
-.button-link:hover { background: rgba(4, 91, 98, 0.08); }
+.button-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(23, 33, 38, 0.08);
+}
+
+.nav-list a:hover { background: rgba(255, 255, 255, 0.78); }
 
 .nav-list a:focus-visible,
 .lang-switch:focus-visible,
@@ -433,19 +466,64 @@ a:focus-visible {
 
 .lang-switch,
 .button-link {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, #ff855c 100%);
   color: #fff;
   font-weight: 700;
+  border: 1px solid rgba(181, 58, 18, 0.25);
 }
 
 .button-secondary {
-  background: transparent;
-  color: var(--accent-strong);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text);
+  border: 1px solid rgba(23, 33, 38, 0.12);
+}
+
+.panel,
+.card,
+.publication-list,
+.selector-main,
+.map-panel {
+  position: relative;
   border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.panel::before,
+.card::before,
+.publication-list::before,
+.selector-main::before,
+.map-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  pointer-events: none;
 }
 
 .hero,
-.section { padding: 4.5rem 0; }
+.section { padding: 4.75rem 0; }
+
+.hero {
+  position: relative;
+  overflow: clip;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -8rem;
+  top: 3rem;
+  width: min(38vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 32% 68% 66% 34% / 34% 39% 61% 66%;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.24), rgba(255, 209, 102, 0.18)),
+    rgba(255, 255, 255, 0.28);
+  filter: blur(10px);
+  z-index: -1;
+}
 
 .hero-grid,
 .section-grid,
@@ -455,49 +533,124 @@ a:focus-visible {
   align-items: start;
 }
 
-.hero-grid { grid-template-columns: 1.2fr 1fr; min-height: 70svh; align-items: center; }
+.hero-grid {
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
 .section-grid,
 .access-grid { grid-template-columns: 0.9fr 1.1fr; }
+
+.hero-copy {
+  border-radius: calc(var(--radius) + 8px);
+  padding: 1.75rem;
+  background:
+    linear-gradient(90deg, rgba(255, 249, 240, 1.00) 0%, rgba(255, 249, 240, 0.96) 40%, rgba(255, 249, 240, 0.75) 100%),
+    var(--hero-image) 300px center / cover no-repeat;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: min(78svh, 760px);
+}
+
+.prototype-content {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card-index {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--accent-alt);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .eyebrow,
 .section-kicker {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--accent-alt);
 }
 
 h1, h2, h3 {
-  line-height: 1.15;
+  line-height: 1.08;
   margin: 0 0 0.8rem;
 }
 
-h1 { font-size: clamp(2.4rem, 5vw, 4.8rem); max-width: 11ch; }
-h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
-h3 { font-size: 1.2rem; }
+h1 {
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  max-width: 11ch;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  letter-spacing: -0.03em;
+}
+
+h3 { font-size: 1.3rem; }
 
 p { margin: 0 0 1rem; }
-.hero-tagline { font-size: clamp(1.1rem, 1.6vw, 1.35rem); color: var(--muted); }
-.lead { font-size: clamp(1.1rem, 1.6vw, 1.35rem); }
-.image-note, .section-meta, .contact-note, .member-role { color: var(--muted); }
 
-.hero-visual img,
-.selector-main,
-.card,
-.publication-list {
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+.hero-tagline,
+.lead {
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
 }
 
-.hero-visual img,
-.map-embed {
+.hero-tagline {
+  max-width: 40rem;
+  color: #26343b;
+  margin-bottom: 1.2rem;
+}
+
+.hero-copy > p:not(.eyebrow):not(.section-kicker):not(.hero-tagline) {
+  font-size: clamp(1.05rem, 1.45vw, 1.18rem);
+}
+
+.hero-kicker {
+  margin-bottom: 0.9rem;
+}
+
+.image-note,
+.section-meta,
+.contact-note {
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.visual-callout {
   width: 100%;
-  border-radius: var(--radius);
-  background: var(--panel);
+  padding: 1.1rem 1.2rem 0.2rem;
+  border-radius: 24px;
+  background: rgba(255, 249, 238, 0.82);
+  border: 1px solid rgba(23, 33, 38, 0.08);
 }
 
-.section-alt { background: rgba(255, 253, 248, 0.7); }
+.section-alt {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 248, 238, 0.48));
+  border-top: 1px solid rgba(23, 33, 38, 0.05);
+  border-bottom: 1px solid rgba(23, 33, 38, 0.05);
+}
 
 .card-grid {
   display: grid;
@@ -508,15 +661,53 @@ p { margin: 0 0 1rem; }
 .two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .card {
-  padding: 1.4rem;
+  padding: 1.5rem;
   border-radius: var(--radius);
-  background: var(--panel);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 238, 0.9)),
+    var(--panel);
 }
 
+.research-card h3,
+.member-card h3 { margin-top: 0.35rem; }
+
 .member-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  min-height: 100%;
+}
+
+.member-photo-frame {
+  overflow: hidden;
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(255, 209, 102, 0.18)),
+    rgba(255, 249, 238, 0.92);
+  border: 1px solid rgba(23, 33, 38, 0.08);
+}
+
+.member-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.member-details {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  justify-content: center;
+}
+
+.member-details h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.text-link {
+  font-weight: 700;
+  text-underline-offset: 0.2em;
 }
 
 .section-head {
@@ -529,9 +720,10 @@ p { margin: 0 0 1rem; }
 .publication-list {
   list-style: none;
   margin: 1rem 0 0;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   border-radius: var(--radius);
-  background: var(--panel);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 247, 235, 0.88));
 }
 
 .publication-year-group + .publication-year-group {
@@ -546,11 +738,15 @@ p { margin: 0 0 1rem; }
 .publication-item {
   display: grid;
   padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(23, 33, 38, 0.08);
 }
 
 .publication-item:last-child { border-bottom: 0; }
-.publication-title { font-weight: 700; text-underline-offset: 0.2em; }
+
+.publication-title {
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
 
 .link-list {
   list-style: none;
@@ -558,16 +754,19 @@ p { margin: 0 0 1rem; }
   padding: 0;
 }
 
-.link-list li + li { margin-top: 0.75rem; }
+.link-list li + li { margin-top: 0.8rem; }
 
 .map-panel {
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) + 4px);
   overflow: hidden;
+  background: rgba(255, 249, 238, 0.72);
 }
 
 .map-embed {
+  width: 100%;
   min-height: 360px;
-  border: 1px solid var(--line);
+  border: 0;
+  background: var(--panel-solid);
 }
 
 .site-footer {
@@ -583,9 +782,10 @@ p { margin: 0 0 1rem; }
 
 .selector-main {
   width: min(42rem, calc(100vw - 2rem));
-  padding: 2rem;
-  border-radius: calc(var(--radius) + 8px);
-  background: var(--panel);
+  padding: 2.25rem;
+  border-radius: calc(var(--radius) + 10px);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 244, 224, 0.88));
 }
 
 .selector-links {
@@ -610,31 +810,47 @@ p { margin: 0 0 1rem; }
   .two-up {
     grid-template-columns: 1fr;
   }
+
+  .member-card {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  h1 { max-width: none; }
 }
 
 @media (max-width: 720px) {
   .hero,
-  .section { padding: 3.25rem 0; }
+  .section { padding: 3.5rem 0; }
+
+  .hero-copy,
+  .selector-main,
+  .card,
+  .publication-list {
+    padding: 1.25rem;
+  }
+
+  .nav-list { gap: 0.5rem; }
 }
 """
-    lab_placeholder = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder image</title>
-  <desc id="desc">Decorative placeholder for a future laboratory photo.</desc>
+    lab_placeholder = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">{e(asset_ui['lab_placeholder']['title'])}</title>
+  <desc id="desc">{e(asset_ui['lab_placeholder']['desc'])}</desc>
   <rect width="640" height="480" fill="#fffdf8"/>
   <rect x="24" y="24" width="592" height="432" rx="24" fill="#efe8d8" stroke="#8a7f70" stroke-width="3" stroke-dasharray="10 10"/>
   <path d="M120 332 L252 208 L352 292 L432 228 L520 332" fill="none" stroke="#045b62" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="220" cy="150" r="36" fill="#d1e3e4"/>
-  <text x="320" y="390" text-anchor="middle" font-size="28" font-family="sans-serif" fill="#5d5851">Photo placeholder</text>
+  <text x="320" y="390" text-anchor="middle" font-size="28" font-family="sans-serif" fill="#5d5851">{e(asset_ui['lab_placeholder']['caption'])}</text>
 </svg>
 """
-    member_placeholder = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
-  <title id="title">Portrait placeholder</title>
-  <desc id="desc">Decorative placeholder for a future member portrait.</desc>
+    member_placeholder = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">{e(asset_ui['member_placeholder']['title'])}</title>
+  <desc id="desc">{e(asset_ui['member_placeholder']['desc'])}</desc>
   <rect width="320" height="240" fill="#fffdf8"/>
   <rect x="18" y="18" width="284" height="204" rx="18" fill="#e8eee9" stroke="#8a7f70" stroke-width="2.5" stroke-dasharray="8 8"/>
   <circle cx="160" cy="100" r="38" fill="#d8d0c2"/>
   <path d="M95 185 C110 150, 210 150, 225 185" fill="#d8d0c2"/>
-  <text x="160" y="214" text-anchor="middle" font-size="18" font-family="sans-serif" fill="#5d5851">Member photo</text>
+  <text x="160" y="214" text-anchor="middle" font-size="18" font-family="sans-serif" fill="#5d5851">{e(asset_ui['member_placeholder']['caption'])}</text>
 </svg>
 """
     (ASSETS_DIR / "site.css").write_text(css, encoding="utf-8")
@@ -647,11 +863,20 @@ def main() -> int:
     publications = load_json(DATA_DIR / "publications.json")
     ensure_dir(DOCS_DIR / "ja")
     ensure_dir(DOCS_DIR / "en")
-    write_assets()
-    (DOCS_DIR / "index.html").write_text(render_language_selector(site), encoding="utf-8")
+    write_assets(site)
+    (DOCS_DIR / "index.html").write_text(
+        render_page(
+            site,
+            publications,
+            "ja",
+            asset_prefix="./assets",
+            switch_href="./en/index.html",
+            home_href="./index.html",
+        ),
+        encoding="utf-8",
+    )
     (DOCS_DIR / "ja" / "index.html").write_text(render_page(site, publications, "ja"), encoding="utf-8")
     (DOCS_DIR / "en" / "index.html").write_text(render_page(site, publications, "en"), encoding="utf-8")
-    print("Rendered site into docs/")
     return 0
 
 

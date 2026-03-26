@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Accessibility and Mobility Lab | 慶應義塾大学 理工学部</title>
-  <meta name="description" content="視覚障害者の移動アクセシビリティを高める、人とロボットの協調研究">
+  <meta name="description" content="視覚障害者の移動アクセシビリティを高める、人とロボットの協調移動システムの研究">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
         <span class="brand-name">Accessibility and Mobility Lab</span>
         <span class="brand-affiliation">慶應義塾大学 理工学部</span>
       </a>
-      <nav aria-label="Primary">
+      <nav aria-label="主要ナビゲーション">
         <ul class="nav-list">
           <li><a href="#mission">ミッション</a></li><li><a href="#research">研究内容</a></li><li><a href="#members">メンバー</a></li><li><a href="#publications">業績</a></li><li><a href="#access">アクセス</a></li><li><a href="#links">関連リンク</a></li>
         </ul>
@@ -26,15 +26,15 @@
   <main id="main">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy panel" style="--hero-image: url('../assets/hero-photo.jpg');">
           <p class="eyebrow">慶應義塾大学 理工学部</p>
           <h1>Accessibility and Mobility Lab</h1>
-          <p class="hero-tagline">視覚障害者の移動アクセシビリティを高める、人とロボットの協調研究</p>
+          <p class="hero-tagline">視覚障害者の移動アクセシビリティを高める、人とロボットの協調移動システムの研究</p>
           <p>Accessibility and Mobility Labは、視覚障害者の安全で主体的な移動を支えるための知能ロボット、空間理解、インタラクション技術を研究するラボです。AIスーツケースの社会実装を見据え、単なる自動化ではなく、利用者の意思と周囲の社会環境を尊重しながら移動を支援するソーシャルナビゲーションを探究します。</p>
-        </div>
-        <div class="hero-visual">
-          <img src="../assets/lab-placeholder.svg" alt="" width="640" height="480">
-          <p class="image-note">写真は後日追加予定です。現在はプレースホルダーを表示しています。</p>
+          <div class="hero-actions">
+            <a class="button-link" href="#research">研究を見る</a>
+            <a class="button-link button-secondary" href="#publications">業績を見る</a>
+          </div>
         </div>
       </div>
     </section>
@@ -49,22 +49,39 @@
       </div>
     </section>
 
+    <!-- 一旦コメントアウト
+    <section class="section">
+      <div class="wrap section-grid">
+        <div>
+          <p class="section-kicker hero-kicker">プロトタイプから実装へ</p>
+          <h2>社会実装を見据えたモビリティ研究</h2>
+        </div>
+        <div class="prototype-content">
+          <p class="lead">ラボ内の実験に閉じず、街や施設での実証実験を通してリアルな環境でのロボットの振る舞いを観察し、研究を進めています。</p>
+        </div>
+      </div>
+    </section>
+    -->
+
     <section id="research" class="section section-alt">
       <div class="wrap">
         <p class="section-kicker">研究</p>
         <h2>研究内容</h2>
         <div class="card-grid three-up">
           <article class="card research-card">
+              <p class="card-index">01 / 研究領域</p>
+              <h3>アクティブマッピング</h3>
+              <p>未知の環境でロボットを運用するために、効率よく安全に空間地図を獲得・更新する手法を研究します。継続的な運用を見据え、環境変化への追従や利用者向け情報提示も含めて扱います。</p>
+            </article>
+<article class="card research-card">
+              <p class="card-index">02 / 研究領域</p>
               <h3>シェアードコントロール</h3>
               <p>ロボットと視覚障害者が移動の主導権を分担し、状況に応じて介入の度合いを調整する研究です。利用者の意図や不安、周囲の歩行者との関係を考慮しながら、安心感と主体性の両立を目指します。</p>
             </article>
 <article class="card research-card">
+              <p class="card-index">03 / 研究領域</p>
               <h3>E2Eモデルナビゲーション</h3>
               <p>センサ入力から移動制御までを学習ベースで結び、複雑な屋内外環境でも柔軟に行動できる移動ロボットを実現します。実運用を意識し、頑健性、説明可能性、介入しやすさを重視します。</p>
-            </article>
-<article class="card research-card">
-              <h3>アクティブマッピング</h3>
-              <p>未知の環境でロボットを運用するために、効率よく安全に空間地図を獲得・更新する手法を研究します。継続的な運用を見据え、環境変化への追従や利用者向け情報提示も含めて扱います。</p>
             </article>
         </div>
       </div>
@@ -76,28 +93,58 @@
         <h2>メンバー</h2>
         <div class="card-grid two-up">
           <article class="card member-card">
-              <h3>浅川 智恵子</h3>
-              <p><a href="https://scholar.google.com/citations?user=IheNxE4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="浅川 智恵子 の写真プレースホルダー" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>浅川 智恵子</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=IheNxE4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>高木 啓伸</h3>
-              <p><a href="https://scholar.google.com/citations?user=NAAdydEAAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="高木 啓伸 の写真プレースホルダー" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>高木 啓伸</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=NAAdydEAAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>石原 辰也</h3>
-              <p><a href="https://scholar.google.com/citations?user=GOQovh4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="石原 辰也 の写真プレースホルダー" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>石原 辰也</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=GOQovh4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>佐藤 大介</h3>
-              <p><a href="https://scholar.google.com/citations?user=dsNpUR0AAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="佐藤 大介 の写真プレースホルダー" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>佐藤 大介</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=dsNpUR0AAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>村田 将之</h3>
-              <p><a href="https://scholar.google.com/citations?user=XZWOEtgAAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="村田 将之 の写真プレースホルダー" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>村田 将之</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=XZWOEtgAAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>粥川 青汰</h3>
-              <p><a href="https://scholar.google.com/citations?user=SpfOQHAAAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="粥川 青汰 の写真プレースホルダー" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>粥川 青汰</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=SpfOQHAAAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
         </div>
       </div>

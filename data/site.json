@@ -4,7 +4,7 @@
     "en_name": "Accessibility and Mobility Lab",
     "ja_affiliation": "慶應義塾大学 理工学部",
     "en_affiliation": "Faculty of Science and Technology, Keio University",
-    "ja_tagline": "視覚障害者の移動アクセシビリティを高める、人とロボットの協調研究",
+    "ja_tagline": "視覚障害者の移動アクセシビリティを高める、人とロボットの協調移動システムの研究",
     "en_tagline": "Research on human-robot mobility systems that improve accessibility for blind and low-vision people",
     "ja_overview": "Accessibility and Mobility Labは、視覚障害者の安全で主体的な移動を支えるための知能ロボット、空間理解、インタラクション技術を研究するラボです。AIスーツケースの社会実装を見据え、単なる自動化ではなく、利用者の意思と周囲の社会環境を尊重しながら移動を支援するソーシャルナビゲーションを探究します。",
     "en_overview": "The Accessibility and Mobility Lab studies intelligent mobility systems, spatial understanding, and interaction techniques that support safe and self-directed travel for blind and low-vision people. With a focus on real-world deployment of the AI Suitcase, the lab explores social navigation that respects user agency as well as the surrounding human environment.",
@@ -12,10 +12,23 @@
     "en_mission_title": "Mission",
     "ja_mission_body": "私たちは、視覚障害者の移動を「誘導される体験」ではなく「自分で選びながら移動できる体験」へと拡張することを目指します。ロボティクス、機械学習、ヒューマンコンピュータインタラクションを横断し、実世界で使えるアクセシブルな移動支援技術を構築します。",
     "en_mission_body": "We aim to transform mobility for blind people from a passive guided experience into an experience in which users can actively choose how they move. The lab combines robotics, machine learning, and human-computer interaction to build accessible mobility technologies that work in the real world.",
+    "ja_prototype_kicker": "プロトタイプから実装へ",
+    "en_prototype_kicker": "Prototype to Practice",
+    "ja_prototype_title": "社会実装を見据えたモビリティ研究",
+    "en_prototype_title": "Mobility research designed for deployment",
+    "ja_prototype_body": "ラボ内の実験に閉じず、街や施設での実証実験を通してリアルな環境でのロボットの振る舞いを観察し、研究を進めています。",
+    "en_prototype_body": "Rather than staying within lab experiments, we advance our research by observing how robots behave in real environments through field trials in cities and facilities.",
     "map_url": "https://maps.app.goo.gl/VYUvun4Bfd9GRzmc7",
     "map_embed_url": "https://www.google.com/maps?q=35.5553149,139.6546213&z=17&output=embed"
   },
   "research_areas": [
+    {
+      "id": "active-mapping",
+      "ja_title": "アクティブマッピング",
+      "en_title": "Active Mapping",
+      "ja_body": "未知の環境でロボットを運用するために、効率よく安全に空間地図を獲得・更新する手法を研究します。継続的な運用を見据え、環境変化への追従や利用者向け情報提示も含めて扱います。",
+      "en_body": "We investigate methods for acquiring and updating spatial maps efficiently and safely so that robots can be deployed in new environments. This includes adaptation to environmental change and presenting map-derived information in accessible ways for users."
+    },
     {
       "id": "shared-control",
       "ja_title": "シェアードコントロール",
@@ -29,13 +42,6 @@
       "en_title": "End-to-End Navigation Models",
       "ja_body": "センサ入力から移動制御までを学習ベースで結び、複雑な屋内外環境でも柔軟に行動できる移動ロボットを実現します。実運用を意識し、頑健性、説明可能性、介入しやすさを重視します。",
       "en_body": "We develop learning-based navigation models that connect sensor inputs to mobility control, enabling robots to act flexibly in complex indoor and outdoor environments. The work emphasizes robustness, interpretability, and practical human intervention in real deployments."
-    },
-    {
-      "id": "active-mapping",
-      "ja_title": "アクティブマッピング",
-      "en_title": "Active Mapping",
-      "ja_body": "未知の環境でロボットを運用するために、効率よく安全に空間地図を獲得・更新する手法を研究します。継続的な運用を見据え、環境変化への追従や利用者向け情報提示も含めて扱います。",
-      "en_body": "We investigate methods for acquiring and updating spatial maps efficiently and safely so that robots can be deployed in new environments. This includes adaptation to environmental change and presenting map-derived information in accessible ways for users."
     }
   ],
   "members": [
@@ -117,5 +123,131 @@
     "link_label_ja": "こちら",
     "link_label_en": "here",
     "link_url": "mailto:tbd@tbd.com"
+  },
+  "ui": {
+    "ja": {
+      "primary_nav_label": "主要ナビゲーション",
+      "nav": [
+        {
+          "id": "mission",
+          "label": "ミッション"
+        },
+        {
+          "id": "research",
+          "label": "研究内容"
+        },
+        {
+          "id": "members",
+          "label": "メンバー"
+        },
+        {
+          "id": "publications",
+          "label": "業績"
+        },
+        {
+          "id": "access",
+          "label": "アクセス"
+        },
+        {
+          "id": "links",
+          "label": "関連リンク"
+        }
+      ],
+      "research_card_label": "研究領域",
+      "member_photo_alt": "{name} の写真プレースホルダー",
+      "scholar_link_label": "Google Scholar",
+      "publication_empty": "業績データはまだ取得されていません。",
+      "publication_heading": "研究業績",
+      "publication_kicker": "Scholar",
+      "access_body": "慶應義塾大学 理工学部キャンパス 34棟405号室を拠点としています。ページ内に埋め込んだ地図とマップリンクから場所をご確認いただけます。",
+      "research_heading": "研究内容",
+      "research_kicker": "研究",
+      "members_heading": "メンバー",
+      "members_kicker": "メンバー",
+      "mission_kicker": "ミッション",
+      "switch_label": "English",
+      "hero_primary_label": "研究を見る",
+      "hero_secondary_label": "業績を見る",
+      "skip_link": "本文へ移動",
+      "updated_prefix": "最終更新: ",
+      "not_fetched": "未取得",
+      "map_title": "慶應義塾大学 矢上キャンパスの地図",
+      "access_kicker": "アクセス",
+      "access_heading": "アクセス",
+      "map_button_label": "Googleマップで見る",
+      "links_kicker": "関連情報",
+      "links_heading": "関連リンク",
+      "contact_suffix": "まで。",
+      "back_to_top": "ページ先頭へ戻る",
+      "hero_photo_alt": "Accessibility and Mobility Labのキービジュアル写真"
+    },
+    "en": {
+      "primary_nav_label": "Primary navigation",
+      "nav": [
+        {
+          "id": "mission",
+          "label": "Mission"
+        },
+        {
+          "id": "research",
+          "label": "Research"
+        },
+        {
+          "id": "members",
+          "label": "Members"
+        },
+        {
+          "id": "publications",
+          "label": "Publications"
+        },
+        {
+          "id": "access",
+          "label": "Access"
+        },
+        {
+          "id": "links",
+          "label": "Related Links"
+        }
+      ],
+      "research_card_label": "Research Track",
+      "member_photo_alt": "Photo placeholder for {name}",
+      "scholar_link_label": "Google Scholar",
+      "publication_empty": "Publication data has not been fetched yet.",
+      "publication_heading": "Publications",
+      "publication_kicker": "Scholar",
+      "access_body": "The lab is based in Room 405, Building 34, Faculty of Science and Technology, Keio University. You can check the embedded map below or open the full map in Google Maps.",
+      "research_heading": "Research Areas",
+      "research_kicker": "Research",
+      "members_heading": "Members",
+      "members_kicker": "People",
+      "mission_kicker": "Mission",
+      "switch_label": "日本語",
+      "hero_primary_label": "Explore Research",
+      "hero_secondary_label": "View Publications",
+      "skip_link": "Skip to content",
+      "updated_prefix": "Last updated: ",
+      "not_fetched": "Not fetched yet",
+      "map_title": "Map of Keio University Yagami Campus",
+      "access_kicker": "Access",
+      "access_heading": "Access",
+      "map_button_label": "Open in Google Maps",
+      "links_kicker": "Network",
+      "links_heading": "Related Links",
+      "contact_suffix": ".",
+      "back_to_top": "Back to top",
+      "hero_photo_alt": "Key visual photograph for the Accessibility and Mobility Lab"
+    },
+    "assets": {
+      "lab_placeholder": {
+        "title": "Placeholder image",
+        "desc": "Decorative placeholder for a future laboratory photo.",
+        "caption": "Photo placeholder"
+      },
+      "member_placeholder": {
+        "title": "Portrait placeholder",
+        "desc": "Decorative placeholder for a future member portrait.",
+        "caption": "Member photo"
+      }
+    }
   }
 }

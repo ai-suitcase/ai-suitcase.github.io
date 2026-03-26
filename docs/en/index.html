@@ -15,7 +15,7 @@
         <span class="brand-name">Accessibility and Mobility Lab</span>
         <span class="brand-affiliation">Faculty of Science and Technology, Keio University</span>
       </a>
-      <nav aria-label="Primary">
+      <nav aria-label="Primary navigation">
         <ul class="nav-list">
           <li><a href="#mission">Mission</a></li><li><a href="#research">Research</a></li><li><a href="#members">Members</a></li><li><a href="#publications">Publications</a></li><li><a href="#access">Access</a></li><li><a href="#links">Related Links</a></li>
         </ul>
@@ -26,15 +26,15 @@
   <main id="main">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy panel" style="--hero-image: url('../assets/hero-photo.jpg');">
           <p class="eyebrow">Faculty of Science and Technology, Keio University</p>
           <h1>Accessibility and Mobility Lab</h1>
           <p class="hero-tagline">Research on human-robot mobility systems that improve accessibility for blind and low-vision people</p>
           <p>The Accessibility and Mobility Lab studies intelligent mobility systems, spatial understanding, and interaction techniques that support safe and self-directed travel for blind and low-vision people. With a focus on real-world deployment of the AI Suitcase, the lab explores social navigation that respects user agency as well as the surrounding human environment.</p>
-        </div>
-        <div class="hero-visual">
-          <img src="../assets/lab-placeholder.svg" alt="" width="640" height="480">
-          <p class="image-note">Photos will be added later. Placeholder images are shown for now.</p>
+          <div class="hero-actions">
+            <a class="button-link" href="#research">Explore Research</a>
+            <a class="button-link button-secondary" href="#publications">View Publications</a>
+          </div>
         </div>
       </div>
     </section>
@@ -49,22 +49,39 @@
       </div>
     </section>
 
+    <!-- 一旦コメントアウト
+    <section class="section">
+      <div class="wrap section-grid">
+        <div>
+          <p class="section-kicker hero-kicker">Prototype to Practice</p>
+          <h2>Mobility research designed for deployment</h2>
+        </div>
+        <div class="prototype-content">
+          <p class="lead">Rather than staying within lab experiments, we advance our research by observing how robots behave in real environments through field trials in cities and facilities.</p>
+        </div>
+      </div>
+    </section>
+    -->
+
     <section id="research" class="section section-alt">
       <div class="wrap">
         <p class="section-kicker">Research</p>
         <h2>Research Areas</h2>
         <div class="card-grid three-up">
           <article class="card research-card">
+              <p class="card-index">01 / Research Track</p>
+              <h3>Active Mapping</h3>
+              <p>We investigate methods for acquiring and updating spatial maps efficiently and safely so that robots can be deployed in new environments. This includes adaptation to environmental change and presenting map-derived information in accessible ways for users.</p>
+            </article>
+<article class="card research-card">
+              <p class="card-index">02 / Research Track</p>
               <h3>Shared Control</h3>
               <p>We study how a robot and a blind traveler can share control authority during navigation, adjusting the level of intervention to fit the situation. This work seeks a balance between confidence, safety, and user agency while taking surrounding pedestrians and social context into account.</p>
             </article>
 <article class="card research-card">
+              <p class="card-index">03 / Research Track</p>
               <h3>End-to-End Navigation Models</h3>
               <p>We develop learning-based navigation models that connect sensor inputs to mobility control, enabling robots to act flexibly in complex indoor and outdoor environments. The work emphasizes robustness, interpretability, and practical human intervention in real deployments.</p>
-            </article>
-<article class="card research-card">
-              <h3>Active Mapping</h3>
-              <p>We investigate methods for acquiring and updating spatial maps efficiently and safely so that robots can be deployed in new environments. This includes adaptation to environmental change and presenting map-derived information in accessible ways for users.</p>
             </article>
         </div>
       </div>
@@ -76,28 +93,58 @@
         <h2>Members</h2>
         <div class="card-grid two-up">
           <article class="card member-card">
-              <h3>Chieko Asakawa</h3>
-              <p><a href="https://scholar.google.com/citations?user=IheNxE4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="Photo placeholder for Chieko Asakawa" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>Chieko Asakawa</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=IheNxE4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>Hironobu Takagi</h3>
-              <p><a href="https://scholar.google.com/citations?user=NAAdydEAAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="Photo placeholder for Hironobu Takagi" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>Hironobu Takagi</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=NAAdydEAAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>Tatsuya Ishihara</h3>
-              <p><a href="https://scholar.google.com/citations?user=GOQovh4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="Photo placeholder for Tatsuya Ishihara" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>Tatsuya Ishihara</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=GOQovh4AAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>Daisuke Sato</h3>
-              <p><a href="https://scholar.google.com/citations?user=dsNpUR0AAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="Photo placeholder for Daisuke Sato" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>Daisuke Sato</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=dsNpUR0AAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>Masayuki Murata</h3>
-              <p><a href="https://scholar.google.com/citations?user=XZWOEtgAAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="Photo placeholder for Masayuki Murata" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>Masayuki Murata</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=XZWOEtgAAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
 <article class="card member-card">
-              <h3>Seita Kayukawa</h3>
-              <p><a href="https://scholar.google.com/citations?user=SpfOQHAAAAAJ&amp;hl=en">Google Scholar</a></p>
+              <div class="member-photo-frame">
+                <img class="member-photo" src="../assets/member-placeholder.svg" alt="Photo placeholder for Seita Kayukawa" width="320" height="240">
+              </div>
+              <div class="member-details">
+                <h3>Seita Kayukawa</h3>
+                <p><a class="text-link" href="https://scholar.google.com/citations?user=SpfOQHAAAAAJ&amp;hl=en">Google Scholar</a></p>
+              </div>
             </article>
         </div>
       </div>
