@@ -118,8 +118,8 @@
     }
   ],
   "contact": {
-    "ja_text": "共同研究や見学に関するご相談は、",
-    "en_text": "For collaboration or visit inquiries, please contact us ",
+    "ja_text": "お問合せは",
+    "en_text": "For inquiries, contact us ",
     "link_label_ja": "こちら",
     "link_label_en": "here",
     "link_url": "mailto:mail@ai-suitcase.org"
