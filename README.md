@@ -1,6 +1,6 @@
 # Accessibility and Mobility Lab Website
 
-慶應義塾大学 理工学部 Accessibility and Mobility Lab の静的サイトを、JSON データと Python 3 スクリプトから `docs/` 以下へ生成するリポジトリです。GitHub Pages での公開を前提に、`docs/` をそのまま配信できる構成にしています。
+慶應義塾大学 理工学研究科 Accessibility and Mobility Lab の静的サイトを、JSON データと Python 3 スクリプトから `docs/` 以下へ生成するリポジトリです。GitHub Pages での公開を前提に、`docs/` をそのまま配信できる構成にしています。
 
 ## 構成
 
