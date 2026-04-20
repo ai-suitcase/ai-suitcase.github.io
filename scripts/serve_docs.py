@@ -3,13 +3,30 @@
 from __future__ import annotations
 
 import argparse
-import os
+import posixpath
+from functools import partial
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "docs"
+DOCS_ALIAS = "/docs"
+
+
+def normalize_request_path(path: str) -> str:
+    normalized = posixpath.normpath(urlsplit(path).path)
+    if normalized in {".", DOCS_ALIAS}:
+        return "/"
+    if normalized.startswith(f"{DOCS_ALIAS}/"):
+        return normalized[len(DOCS_ALIAS) :] or "/"
+    return normalized if normalized.startswith("/") else f"/{normalized}"
+
+
+class DocsHTTPRequestHandler(SimpleHTTPRequestHandler):
+    def translate_path(self, path: str) -> str:
+        return super().translate_path(normalize_request_path(path))
 
 
 def parse_args() -> argparse.Namespace:
@@ -24,18 +41,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--port",
         type=int,
-        default=8000,
-        help="Port to listen on. Default: 8000",
+        default=8002,
+        help="Port to listen on. Default: 8002",
     )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    os.chdir(DOCS_DIR)
+    handler = partial(DocsHTTPRequestHandler, directory=str(DOCS_DIR))
     server = ThreadingHTTPServer(
         (args.host, args.port),
-        SimpleHTTPRequestHandler,
+        handler,
     )
     print(f"Serving {DOCS_DIR} at http://{args.host}:{args.port}/")
     try:

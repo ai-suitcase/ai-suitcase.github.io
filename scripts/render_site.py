@@ -162,7 +162,11 @@ def render_page(
     visual_kicker = localized_field(site["lab"], lang, "prototype_kicker")
     visual_title = localized_field(site["lab"], lang, "prototype_title")
     visual_body = localized_field(site["lab"], lang, "prototype_body")
-    hero_image_url = f"{asset_prefix}/hero-photo.jpg"
+    hero_background_style = (
+        "background-image: "
+        "linear-gradient(90deg, rgba(255, 249, 240, 1.00) 0%, rgba(255, 249, 240, 0.96) 40%, rgba(255, 249, 240, 0.75) 100%), "
+        f"url('{e(asset_prefix)}/hero-photo.jpg');"
+    )
 
     return f"""<!doctype html>
 <html lang="{lang}">
@@ -192,7 +196,7 @@ def render_page(
   <main id="main">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-copy panel" style="--hero-image: url('{e(hero_image_url)}');">
+        <div class="hero-copy panel" style="{hero_background_style}">
           <p class="eyebrow">{e(affiliation)}</p>
           <h1>{e(hero_name)}</h1>
           <p class="hero-tagline">{e(tagline)}</p>
@@ -544,9 +548,9 @@ a:focus-visible {
 .hero-copy {
   border-radius: calc(var(--radius) + 8px);
   padding: 1.75rem;
-  background:
-    linear-gradient(90deg, rgba(255, 249, 240, 1.00) 0%, rgba(255, 249, 240, 0.96) 40%, rgba(255, 249, 240, 0.75) 100%),
-    var(--hero-image) 300px center / cover no-repeat;
+  background-position: 0 0, 300px center;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
 }
 
 .hero-copy {

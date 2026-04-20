@@ -31,7 +31,7 @@ python3 scripts/render_site.py
 python3 scripts/serve_docs.py
 ```
 
-`http://127.0.0.1:8000/` を開くと表示を確認できます。
+`http://127.0.0.1:8002/` を開くと表示を確認できます。`serve_docs.py` は `docs/` を配信ルートにするので、ローカル確認では `/` が正規の URL です。互換性のため `/docs/` でもアクセスできます。
 
 ポートを変更したい場合:
 
